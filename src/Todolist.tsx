@@ -1,7 +1,7 @@
 import { FilterValueType } from './App'
 
 export type TaskType = {
-    id: number
+    id: string
     item: string
     isDone: boolean
 }
@@ -9,14 +9,20 @@ export type TaskType = {
 type PropsType = {
     title: string
     tasks: Array<TaskType>
-    RemoveTasks: (id: number) => void
+    RemoveTasks: (id: string) => void
     ChangeFilter: (value: FilterValueType) => void
+    AddTask: () => void
 }
+
 
 export function Todolist(props: PropsType) {
     return (
         <div>
             <h3>{props.title}</h3>
+            <div>
+                <input />
+                <button onClick={() => { props.AddTask }} />
+            </div>
             <ul>
                 {
                     props.tasks.map((t) => <li> <input type="checkbox" checked={t.isDone} />
