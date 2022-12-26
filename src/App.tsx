@@ -16,8 +16,8 @@ function App() {
     { id: v1(), item: 'violin', isDone: false }
   ])
 
-  function AddTask() {
-    let NewTask = { id: v1(), item: 'new Task', isDone: false }
+  function AddTask(title: string) {
+    let NewTask = { id: v1(), item: title, isDone: false }
     let Newtasks = [NewTask, ...data];
     setData(Newtasks)
   }
