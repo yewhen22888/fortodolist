@@ -44,19 +44,26 @@ function App() {
     setData(Filtertasks)
   }
 
-
+  function ChangeStatus(taskId: string, isDone: boolean) {
+    let task = data.find(t => t.id === taskId)
+    if (task) {
+      task.isDone = isDone
+    }
+    setData([...data])
+  }
 
 
   return (
     <div className='App'>
-      <Todolist 
-      title='what do you play' 
-      tasks={TaskForTodolist} 
-      RemoveTasks={RemoveTasks}
-       ChangeFilter={ChangeFilter}
-       AddTask={AddTask}/>
-      {/* <Todolist title='what movies you seen?' tasks={tasks2} />
-      <Todolist title='what books you read?' tasks={tasks3}  /> */}
+      <Todolist
+        title='what do you play'
+        tasks={TaskForTodolist}
+        RemoveTasks={RemoveTasks}
+        ChangeFilter={ChangeFilter}
+        AddTask={AddTask}
+        ChangeStatus={ChangeStatus} 
+        Filter={Filter}/>
+      
 
     </div>
   )

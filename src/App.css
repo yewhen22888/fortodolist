@@ -2,4 +2,18 @@
   text-align: center;
  
 }
+.error {
+  border:red 1px solid;
+}
 
+.error-message {
+  color:red;
+}
+
+.active {
+  background-color: rgb(42, 165, 69);
+}
+
+.isDone {
+opacity: 0.5;
+}
