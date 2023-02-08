@@ -1,13 +1,21 @@
-.App {
-  text-align: center;
- 
+.AppItem{
+  display: flex;
+  display: inline-block;
 }
+
+ .App {
+   text-align: center; 
+   display: flex;
+  display: inline-block; 
+
+} 
+
 .error {
-  border:red 1px solid;
+  border: red 1px solid;
 }
 
 .error-message {
-  color:red;
+  color: red;
 }
 
 .active {
@@ -15,5 +23,5 @@
 }
 
 .isDone {
-opacity: 0.5;
+  opacity: 0.5;
 }
