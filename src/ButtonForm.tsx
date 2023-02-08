@@ -1,5 +1,5 @@
 import { ChangeEvent, useState,KeyboardEvent } from "react"
-
+import './App.css';
 type ButtonFormType = {
     AddItem: (title: string) => void
    
@@ -25,7 +25,7 @@ function ButttonForm (props:ButtonFormType){
         }
     }
     return(
-       <div>
+       <div className="App">
         <input
         value={NewTaskTitle}
         onChange={onChangeHandler}

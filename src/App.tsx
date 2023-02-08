@@ -81,10 +81,10 @@ function App() {
 
   return (
 
-    <div className='AppItem'>
-    <div className="bblock"> <ButttonForm AddItem={AddItem} /></div>
+    <div >
+     <ButttonForm AddItem={AddItem} />
      
-       <div className="App"> {
+       <div className='AppItem'> {
           todolists.map((tl) => {
             let TaskForTodolist = tasks[tl.id];
             if (tl.filter === "completed") {

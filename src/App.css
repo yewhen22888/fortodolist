@@ -1,14 +1,18 @@
-.AppItem{
+.AppItem {
   display: flex;
-  display: inline-block;
-}
-
+  padding: 18px;
+ }
  .App {
-   text-align: center; 
-   display: flex;
-  display: inline-block; 
+ padding: 19px;
+ border: 3px solid black;
+ }
 
-} 
+ .todolist {
+  padding: 18px;
+  border: 3px solid black;
+  border-radius: 15px;
+ }
+
 
 .error {
   border: red 1px solid;
