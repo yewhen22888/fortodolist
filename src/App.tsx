@@ -65,8 +65,8 @@ function App() {
     { id: TaskId2, title: 'what do you Learn', filter: 'all' }
 
   ])
-                                  //вот тут
-  let [tasks, setTasks] = useState<Array<TasksType>>({
+
+  let [tasks, setTasks] = useState<TasksType>({
     [TaskId1]: [{ id: v1(), item: 'guitar', isDone: true },
     { id: v1(), item: 'piano', isDone: false },
     { id: v1(), item: 'triangel', isDone: false },
@@ -81,6 +81,16 @@ function App() {
     let NewTask: TodolistType = { id: v1(), title: title, filter: 'all' }
     setTodolists([NewTask, ...todolists])
     setTasks({ ...tasks, [NewTask.id]: [] })
+  }
+
+  function ChangeItem(title: string, todolistId: string, id: string) {
+    let taskObj = tasks[todolistId];
+    let taskf = taskObj.find(t => t.id === id);
+    if (taskf) {
+      taskf.item = title  
+    }
+
+    setTasks({...tasks})
   }
 
   return (
@@ -105,6 +115,7 @@ function App() {
             RemoveTasks={RemoveTasks}
             ChangeFilter={ChangeFilter}
             AddTask={AddTask}
+            ChangeItem={ChangeItem}
             ChangeStatus={ChangeStatus}
             Filter={tl.filter}
             removeTodolist={removeTodolist} />
